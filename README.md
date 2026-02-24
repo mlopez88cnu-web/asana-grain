@@ -1,16 +1,13 @@
-## The Lopez Group LLC — Landing Page
+# Grain → Asana
 
-Static landing page for The Lopez Group LLC (B2B demand gen + ABM).
+Turn Grain call transcripts into Asana tasks. Paste a transcript, parse action items, then create tasks in your Asana workspace.
 
-### Grain → Asana tool
+### Deploy (Vercel)
 
-**[grain-to-asana.html](grain-to-asana.html)** — Paste Grain call transcripts and create Asana tasks from action items.
+1. Set env var **`ASANA_ACCESS_TOKEN`** (Asana [Personal Access Token](https://app.asana.com/0/developer-console) with `workspaces:read`, `projects:read`, `tasks:write`).
+2. Deploy. The app is at `/` and `/grain-to-asana.html`.
 
-- **Local:** Open `grain-to-asana.html` in a browser. Workspace/project dropdowns and “Create tasks” need the app served from a host that can call your API (e.g. Vercel).
-- **Vercel:** Set env var `ASANA_ACCESS_TOKEN` (Personal Access Token with `workspaces:read`, `projects:read`, `tasks:write`). The page uses `/api/asana/*` to list workspaces/projects and create tasks.
-- **Local dev with API:** Run `npx vercel dev` in the project root and open the URL shown (e.g. http://localhost:3000/grain-to-asana.html). Add `ASANA_ACCESS_TOKEN` to `.env` for the API.
+### Local dev
 
-### Run locally
-
-- Open `index.html` in your browser.
-
+- **API + app:** Run `npx vercel dev`, then open the URL shown (e.g. http://localhost:3000). Add `ASANA_ACCESS_TOKEN` to `.env`.
+- **App only:** Open `grain-to-asana.html` in a browser (workspace/project and “Create tasks” need the deployed API).
